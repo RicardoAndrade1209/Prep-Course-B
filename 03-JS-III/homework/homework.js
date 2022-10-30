@@ -8,29 +8,51 @@ function imprimirSumaNumeros() {
     // Imprime la suma de los números del 1 al 10
     // Pista: usa un acumulador
     // Tu código:
+    var acumulador = 0;
+    for(var i = 0; i <= 10; i++){
+      acumulador = acumulador + i;
+    }
+    return acumulador
 }
 
 function encuentraPares(array){
   // Devuelve un arreglo con los pares encontrados
   // en el arreglo de enteros pasado como parámetro
   // Tu código:
+  var arrayDePares = [];
+  for(var i = 0; i < array.length; i++){
+    if(array[i] % 2 == 0){
+      arrayDePares.unshift(array[i]);
+    }
+  } return arrayDePares
 }
 
 function elevaAlCuadrado(array){
   // Devuelve un arreglo con cada número del array
   // elevado al cuadrado
   // Tu código:
+  var arrayElevadoAlCuadrado = [];
+  for(var i = 0; i < array.length; i++){
+    arrayElevadoAlCuadrado.unshift(Math.pow(array[i], 2));
+  }
+  return arrayElevadoAlCuadrado
 }
 
 function sumaArray(array){
   // Devuelve el resultado de sumar todos los elementos
   // de un arreglo de enteros dado
   // Tu código:
+  var suma = 0;
+  for(var i = 0; i < array.length; i++){
+    suma = suma + array[i];
+  }
+  return suma
 }
 
 function numeroDigitos(num){
   // Devuelve el número de dígitos de un número dado
   // Tu código:
+  
 }
   
   
