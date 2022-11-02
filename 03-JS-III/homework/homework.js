@@ -19,23 +19,27 @@ function encuentraPares(array){
   // Devuelve un arreglo con los pares encontrados
   // en el arreglo de enteros pasado como parámetro
   // Tu código:
-  var arrayDePares = [];
+  /* var arrayDePares = [];
   for(var i = 0; i < array.length; i++){
     if(array[i] % 2 == 0){
       arrayDePares.unshift(array[i]);
     }
-  } return arrayDePares
+  } return arrayDePares */
+  var pares = array.filter((elemento) => elemento % 2 === 0);
+  return pares
 }
 
 function elevaAlCuadrado(array){
   // Devuelve un arreglo con cada número del array
   // elevado al cuadrado
   // Tu código:
-  var arrayElevadoAlCuadrado = [];
+/*   var arrayElevadoAlCuadrado = [];
   for(var i = 0; i < array.length; i++){
     arrayElevadoAlCuadrado.unshift(Math.pow(array[i], 2));
   }
-  return arrayElevadoAlCuadrado
+  return arrayElevadoAlCuadrado */
+  var cuadrado = array.map((elemento) => elemento ** 2)
+  return cuadrado
 }
 
 function sumaArray(array){
