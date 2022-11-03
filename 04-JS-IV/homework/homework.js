@@ -78,6 +78,13 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+   // Tu código:
+   if(objeto[propiedad]){
+    return true
+  }
+  else { 
+    return false
+  }
 }
 
 function verificarPassword (usuario, password) {
@@ -85,12 +92,20 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
+  if(usuario.password === password){
+    return true
+  } 
+  else {
+    return false
+  }
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
+  usuario.password = nuevaPassword;
+  return usuario
 }
 
 function agregarAmigo (usuario, nuevoAmigo) {
@@ -98,6 +113,8 @@ function agregarAmigo (usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
+  usuario.amigos.push(nuevoAmigo);
+  return usuario
 }
 
 function pasarUsuarioAPremium (usuarios) {
@@ -106,6 +123,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  usuarios.forEach(usuario => {
+    usuario.esPremium = true
+  });
+  return usuarios
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -115,6 +136,11 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+  var sumaLikes = 0;
+  for(var i = 0; i < usuario.posts.length; i++){
+    sumaLikes += usuario.posts[i].likes;
+  }
+  return sumaLikes
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -127,7 +153,10 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+  producto.calcularPrecioDescuento = function(){
+     return this.precio - (this.precio * this.porcentajeDeDescuento)
+  }
+  return producto
 }
 
 // No modificar nada debajo de esta línea
